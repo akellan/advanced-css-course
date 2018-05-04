@@ -4,11 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "sync": "browser-sync start --server --watch --files '*.*'"
+    "browser:watch": "browser-sync start --server --watch --files '*.css|*.html'",
+    "compile:sass:watch": "node-sass -w sass/main.scss css/style.css",
+    "start": "run-p compile:sass:watch browser:watch"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "node-sass": "^4.9.0"
+    "node-sass": "^4.9.0",
+    "npm-run-all": "^4.1.2"
   }
 }
