@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "browser:watch": "browser-sync start --server --watch --files '*.css|*.html'",
-    "compile:sass:watch": "node-sass -w sass/main.scss css/style.css",
+    "compile:sass:watch": "node-sass -w sass/main.scss css/main.css",
     "start": "run-p compile:sass:watch browser:watch"
   },
   "author": "",
