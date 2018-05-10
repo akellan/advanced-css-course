@@ -364,7 +364,7 @@ body {
     opacity: 1;
     transform: translate(-50%, -50%); }
   .story:hover .story__image {
-    transform: sca; }
+    transform: scale(1); }
 
 .bg-video {
   position: absolute;
