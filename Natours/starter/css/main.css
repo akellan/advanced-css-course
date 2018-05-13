@@ -401,12 +401,20 @@ body {
   width: 75%;
   margin: 0 auto;
   box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.15);
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.6);
   border-radius: 3px;
   padding: 6rem;
   padding-left: 9rem;
   font-size: 1.6rem;
   transform: skewX(-12deg); }
+  @media (max-width: 56.25em) {
+    .story {
+      width: 100%;
+      padding: 4rem;
+      padding-left: 7rem; } }
+  @media (max-width: 37.5em) {
+    .story {
+      transform: skewX(0deg); } }
   .story::after {
     content: '';
     display: table;
@@ -417,11 +425,15 @@ body {
     float: left;
     -webkit-shape-outside: circle(50% at 50% 50%);
     shape-outside: circle(50% at 50% 50%);
+    -webkit-clip-path: circle(50% at 50% 50%);
     clip-path: circle(50% at 50% 50%);
     transform: translateX(-3rem) skewX(12deg);
     position: relative;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden; }
+    @media (max-width: 37.5em) {
+      .story__shape {
+        transform: translateX(-3rem) skewX(0deg); } }
   .story__image {
     height: 100%;
     transform: scale(1.4);
@@ -429,8 +441,14 @@ body {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     filter: blur(0px) brightness(100%); }
+    @media (max-width: 37.5em) {
+      .story__image {
+        filter: blur(3px) brightness(80%); } }
   .story__text {
     transform: skewX(12deg); }
+    @media (max-width: 37.5em) {
+      .story__text {
+        transform: skewX(0deg); } }
   .story__caption {
     position: absolute;
     top: 50%;
@@ -443,6 +461,10 @@ body {
     opacity: 0;
     transition: all 0.5s;
     backface-visibility: hidden; }
+    @media (max-width: 37.5em) {
+      .story__caption {
+        opacity: 1;
+        transform: translate(-50%, -50%); } }
   .story:hover .story__caption {
     opacity: 1;
     transform: translate(-50%, -50%); }
@@ -479,6 +501,9 @@ body {
   width: 90%;
   color: inherit;
   transition: all 0.3s; }
+  @media (max-width: 56.25em) {
+    .form__input {
+      width: 100%; } }
   .form__input:focus {
     outline: none;
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
@@ -504,6 +529,13 @@ body {
 .form__radio-group {
   display: inline-block;
   width: 40%; }
+  @media (max-width: 56.25em) {
+    .form__radio-group {
+      width: 100%; } }
+
+@media (max-width: 56.25em) {
+  .form__radio-group:not(:last-child) {
+    margin-bottom: 2rem; } }
 
 .form__radio-label {
   cursor: pointer;
@@ -560,7 +592,7 @@ body {
   .popup__close:link, .popup__close:visited {
     position: absolute;
     top: 3rem;
-    right: 5rem;
+    right: 4rem;
     text-transform: uppercase;
     font-size: 3rem;
     text-decoration: none;
@@ -604,6 +636,27 @@ body {
     column-gap: 4rem;
     column-rule: 1px solid #eee;
     overflow-wrap: break-word; }
+  @media (max-width: 37.5em) {
+    .popup__close:link, .popup__close:visited {
+      top: 1rem;
+      right: 2rem; }
+    .popup__left {
+      display: block;
+      width: 100%; }
+      .popup__left::after {
+        content: '';
+        display: table;
+        clear: both; }
+    .popup__right {
+      display: block;
+      width: 100%; }
+    .popup__text {
+      column-count: 1; }
+    .popup__img {
+      width: 50%;
+      float: left;
+      height: 15rem;
+      object-fit: cover; } }
 
 .header {
   height: 95vh;
@@ -868,9 +921,21 @@ body {
 .book {
   background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.8) 50%, transparent 50%), url(../img/nat-10.jpg);
   background-size: cover;
-  height: 50rem;
   border-radius: 3px;
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.8); }
+  @media (max-width: 75em) {
+    .book {
+      background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.8) 70%, transparent 70%), url(../img/nat-10.jpg);
+      background-size: cover; } }
+  @media (max-width: 56.25em) {
+    .book {
+      background-image: linear-gradient(to right, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.8) 100%), url(../img/nat-10.jpg); } }
   .book__form {
     padding: 6rem;
     width: 50%; }
+    @media (max-width: 75em) {
+      .book__form {
+        width: 70%; } }
+    @media (max-width: 56.25em) {
+      .book__form {
+        width: 100%; } }
