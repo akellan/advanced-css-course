@@ -12,7 +12,6 @@
   @include clear-fix;
 
   &__shape {
-    background-color: orange;
     width: 15rem;
     height: 15rem;
     float: left;
@@ -21,12 +20,17 @@
     clip-path: circle(50% at 50% 50%);
     transform: translateX(-3rem) skewX(12deg);
     position: relative;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
   }
 
   &__image {
     height: 100%;
     transform: scale(1.4);
     transition: all 0.5s;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    filter: blur(0px) brightness(100%);
   }
 
   &__text {
@@ -54,5 +58,6 @@
 
   &:hover &__image {
     transform: scale(1);
+    filter: blur(3px) brightness(80%);
   }
 }
