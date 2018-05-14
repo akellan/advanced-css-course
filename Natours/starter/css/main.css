@@ -767,7 +767,8 @@ body {
 
 .navigation__checkbox:checked ~ .navigation__nav {
   width: 100%;
-  opacity: 1; }
+  opacity: 1;
+  visibility: visible; }
 
 .navigation__button {
   background-color: #fff;
@@ -809,7 +810,8 @@ body {
   top: 0;
   left: 0;
   z-index: 1500;
-  transition: all 0.8s cubic-bezier(0.86, 0, 0.07, 1); }
+  transition: all 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+  visibility: hidden; }
 
 .navigation__list {
   min-width: 50rem;
