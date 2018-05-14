@@ -8,6 +8,7 @@
     height: 50rem;
     width: 100%;
     transition: all 1s ease;
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     position: absolute;
     top: 0;
