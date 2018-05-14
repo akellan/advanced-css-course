@@ -4,14 +4,21 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "browser:watch": "browser-sync start --server --watch --files '*.css|*.html'",
+    "browser:watch": "browser-sync start --server --watch --files '*.css,*.html'",
     "compile:sass:watch": "node-sass -w sass/main.scss css/main.css",
-    "start": "run-p compile:sass:watch browser:watch"
+    "start": "run-p compile:sass:watch browser:watch",
+    "compile:sass": "node-sass sass/main.scss css/main.comp.css",
+    "concat:css": "concat -o css/main.concat.css css/main.comp.css",
+    "prefix:css": "postcss --use autoprefixer -b 'last 10' -o css/main.prefix.css css/main.concat.css",
+    "compress:css": "node-sass css/main.prefix.css css/main.compressed.css --output-style compressed"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "autoprefixer": "^8.5.0",
+    "concat": "^1.0.3",
     "node-sass": "^4.9.0",
-    "npm-run-all": "^4.1.2"
+    "npm-run-all": "^4.1.2",
+    "postcss-cli": "^5.0.0"
   }
 }
