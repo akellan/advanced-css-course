@@ -13,6 +13,10 @@ Dark green: #28b485
   padding: 0;
   box-sizing: inherit; }
 
+::selection {
+  background-color: #7ed56f;
+  color: #fff; }
+
 html {
   font-size: 62.5%; }
   @media (max-width: 112.5em) {

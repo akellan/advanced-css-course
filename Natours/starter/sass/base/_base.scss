@@ -6,6 +6,11 @@
   box-sizing: inherit;
 }
 
+::selection {
+  background-color: $color-primary-light;
+  color: $color-white;
+}
+
 html {
   // defines 1rem
   font-size: 62.5%;
