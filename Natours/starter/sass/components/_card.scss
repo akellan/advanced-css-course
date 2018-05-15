@@ -8,6 +8,7 @@
     height: 50rem;
     width: 100%;
     transition: all 1s ease;
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     position: absolute;
     top: 0;
@@ -169,5 +170,48 @@
   &__price-value {
     font-size: 6rem;
     font-weight: 200;
+  }
+
+  @include respond(tablet-port) {
+    position: relative;
+    height: auto;
+    border-radius: 3px;
+    background-color: #fff;
+
+    &__side {
+      height: auto;
+      position: relative;
+      box-shadow: none;
+
+      &--back {
+        border-radius: 0;
+        transform: rotateY(0deg);
+        -webkit-clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
+        clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
+      }
+    }
+
+    &:hover &__side--front {
+      transform: rotateY(0deg);
+    }
+
+    &__cta {
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 100%;
+      transform: translate(0, 0);
+      text-align: center;
+      padding: 3rem 0;
+    }
+
+    &__price-box {
+      padding-bottom: 2rem;
+    }
+
+    // &__price-value {
+    //   font-size: 6rem;
+    //   font-weight: 200;
+    // }
   }
 }

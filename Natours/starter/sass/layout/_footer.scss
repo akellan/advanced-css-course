@@ -3,9 +3,18 @@
   background-color: #333;
   font-size: 1.4rem;
 
+  @include respond(tablet-port) {
+    padding: 8rem 0;
+  }
+
   &__navigation {
     border-top: 1px solid #777;
     padding: 2rem;
+
+    @include respond(tablet-port) {
+      text-align: center;
+      width: 100%;
+    }
   }
 
   &__logo-box {
