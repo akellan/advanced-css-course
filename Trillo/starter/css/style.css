@@ -66,9 +66,9 @@ body {
     background-color: var(--color-grey-light-2);
     border: none;
     border-radius: 100px;
-    padding: .7rem 2rem;
+    padding: 0.7rem 2rem;
     width: 90%;
-    transition: all .2s;
+    transition: all 0.2s;
     margin-right: -3.5rem; }
     .search__input:focus {
       width: 100%;
@@ -128,6 +128,31 @@ body {
     margin-right: 1rem; }
   .user-nav__user-name {
     color: var(--color-grey-dark-3); }
+
+.btn-inline {
+  border: none;
+  padding-bottom: 0.2rem;
+  border-bottom: 1px solid currentColor;
+  color: var(--color-primary);
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.2s; }
+  .btn-inline:hover {
+    color: var(--color-grey-dark-3); }
+  .btn-inline:focus {
+    outline: none;
+    animation: pulsate 0.8s infinite; }
+
+@keyframes pulsate {
+  0% {
+    transform: scale(1);
+    box-shadow: none; }
+  100% {
+    transform: scale(1);
+    box-shadow: none; }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.25); } }
 
 .container {
   max-width: 120rem;
@@ -210,3 +235,42 @@ body {
   .gallery__photo {
     width: 100%;
     display: block; }
+
+.overview {
+  display: flex;
+  border: 1px solid var(--color-grey-light-2);
+  align-items: center; }
+  .overview__heading {
+    font-size: 2.25rem;
+    font-weight: 300;
+    padding: 1.5rem 3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem; }
+  .overview__stars {
+    margin-right: auto;
+    display: flex; }
+  .overview__icon-star, .overview__icon-location {
+    width: 1.75rem;
+    height: 1.75rem;
+    fill: var(--color-primary); }
+  .overview__location {
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center; }
+  .overview__rating {
+    background-color: var(--color-primary);
+    margin-left: 3rem;
+    color: white;
+    align-self: stretch;
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; }
+  .overview__rating-average {
+    font-size: 2.25rem;
+    font-weight: 300;
+    margin-bottom: -3px; }
+  .overview__rating-count {
+    font-size: 0.8rem;
+    text-transform: uppercase; }
