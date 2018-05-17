@@ -123,6 +123,7 @@
   background-color: transparent;
   cursor: pointer;
   transition: all 0.2s;
+  font-size: inherit;
 
   &:hover {
     color: var(--color-grey-dark-3);
